@@ -61,10 +61,13 @@ const App = () => {
       id: 6,
     },
   ];
+
+  //! оказалось на массив запрос не работает
   const [oneCard, setOneCard] = useState(null);
   async function getOneCard(id) {
-    let result = await axios(`${cards}/${id}`);
-    setOneCard(result.data);
+    let { data } = await axios(`${cards}/${id}`);
+    console.log(data);
+    // setOneCard(result.data);
   }
   return (
     <div>

@@ -7,10 +7,10 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
 import Box from '@mui/material/Box';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = (props) => {
-
+  const navigate = useNavigate()    
   return (
     <div>
       <Box sx={{ width: '90%' }} margin='30px auto'>
@@ -36,7 +36,7 @@ const HomePage = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={()=>Navigate(`/details/${item.id}`)}>
+        <Button onClick={()=>navigate(`/details/${item.id}`)} size="small" color="primary">
           Details
         </Button>
       </CardActions>
